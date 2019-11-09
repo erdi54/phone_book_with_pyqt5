@@ -1,0 +1,23 @@
+from Db import DBGenel
+import os 
+
+class AnaDb(DBGenel):
+    def __init__(self, *args, **kwargs):
+        super().__init__(os.getcwd()+ os.sep +"TDF.db")
+     
+    def kisiListele(self):
+        liste = self.select(TABLO="V_KISI_LISTE",SUTUN=["ID","ADI","SOYADI","ILI","ILCESI"])
+        return liste
+    def kisiEkle(self,adi,soyadi,il,ilce):
+        sonuc = self.insert(TABLO="TDF_DEFTER",DEGER=[("Adi","'"+adi+"'"),("Soyadi","'"+soyadi+"'"),("il",str(il)),("ilce",str(ilce))])
+        return sonuc
+    def ilListele(self):
+        liste = self.select(TABLO="ST_ILLER",SUTUN=["IL_ID","IL_ADI",] )
+        return liste 
+    def ilceListele(self,ilID):
+        liste = self.select(TABLO="ST_ILCELER",SUTUN=["ILCE_ID","ILCE_ADI",], SART=[("1","IL_ID",str(ilID))])
+        return liste
+    def kisiGuncelleme(self,adi,soyadi,il,ilce,kayitID):
+        sonuc = self.update(TABLO="TDF_DEFTER",DEGER=[("Adi","'"+adi+"'"),("Soyadi","'"+soyadi+"'"),("il",str(il)),("ilce",str(ilce))],SART=[("1",'KAYIT_ID',str(kayitID))])
+        
+        return sonuc

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TelefonEkleme</class>
+ <widget class="QWidget" name="TelefonEkleme">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>262</width>
+    <height>427</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>241</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>TELEFON LİSTESİ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QListWidget" name="telList"/>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txtTel"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnKaydet">
+      <property name="text">
+       <string>KAYDET</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnYeni">
+      <property name="text">
+       <string>YENİ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnSil">
+      <property name="text">
+       <string>SİL</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
